@@ -11,4 +11,4 @@ def main_page():
 @main.errorhandler(500)
 def error():
     """ Hiding all 500 Error from user """ 
-    return make_response(jsonify({"error": " Not Foudn"}), 404)
+    return make_response(jsonify({"error": " Not Found"}), 404)

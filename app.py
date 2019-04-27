@@ -1,6 +1,7 @@
 from flask import Flask
 from datasource.database import db, db_url
 from views import general
+from views.contact import Contact
 
 # using a function to add more configuration to the application
 def create_app():
@@ -17,6 +18,7 @@ def create_app():
 
     # Add Blueprint
     app.register_blueprint(general.main)
+    app.register_blueprint(Contact.contact)
 
     return app
 
