@@ -4,7 +4,7 @@ info:
   title: NAB Service
   description: A service to store your contacts
 paths:
-  /api/book:
+  /api/contacts:
     get:
       description: |
         Returns all contacts
@@ -30,7 +30,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /api/contact/submit:
+  /api/contacts/submit:
     post:
       description: Submit a new contact
       requestBody:
