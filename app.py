@@ -1,6 +1,5 @@
 from flask import Flask
-from settings import DatabaseConfig
-from datasource.database import db
+from datasource.database import db, db_url
 
 # using a function to add more configuration to the application
 def create_app():
@@ -8,18 +7,22 @@ def create_app():
     app.config['DEBUG'] = False
 
     # Setup database URI with SQLite
-    configurator  = DatabaseConfig()
-    configurator.setup_db_uri(app)
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    
     # Init db
-    db.init_app()
+    db.init_app(app)
 
     # Add Blueprint
     
 
+    return app
 
-@app.route('/')
-def sayHi():
-    return "nab-book"
+
+# @app.route('/')
+# def sayHi():
+#     return "nab-book"
 
 if __name__ == "__main__":
     app = create_app()

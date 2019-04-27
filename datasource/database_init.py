@@ -1,11 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from settings import DatabaseConfig
+from datasource.database import db_url
 
 """ Init db with local .env """
-db_uri = DatabaseConfig().get_db_uri()
-engine = create_engine(db_uri, convert_unicode=True, echo=True)
+engine = create_engine(db_url, convert_unicode=True, echo=True)
 db_session = scoped_session(sessionmaker(
     autocommit=False,
     autoflush=False,
@@ -16,5 +15,5 @@ Base = declarative_base()
 Base.query = db_session.query_property()
 
 def init_db():
-    # Import models written 
+    import models.contact
     Base.metadata.create_all(bind=engine)
