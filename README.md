@@ -35,3 +35,7 @@ Made with `pytest`
 
 
 ## Docker Command
+
+
+## Manual Installation
+
