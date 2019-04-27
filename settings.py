@@ -8,3 +8,4 @@ class DatabaseConfig():
 
     def setup_db_uri(app):
         app.config['SQLALCHEMY_DATABASE_URI'] = sql_lite_db_uri
+        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
