@@ -1,7 +1,8 @@
 from flask import Flask
 from datasource.database import db, db_url
 from views import general
-from views.contact import Contact
+from views.contact import ContactView
+from datasource.database_init import init_db
 
 # using a function to add more configuration to the application
 def create_app():
@@ -15,10 +16,13 @@ def create_app():
     
     # Init db
     db.init_app(app)
-
+    init_db()
+    # Prevent sorting JSON
+    app.config["JSON_SORT_KEYS"] = False
+    
     # Add Blueprint
     app.register_blueprint(general.main)
-    app.register_blueprint(Contact.contact)
+    app.register_blueprint(ContactView.contact)
 
     return app
 
