@@ -26,3 +26,9 @@ For now a contact can only have one **phone number** and/or
 one **address**
 
 
+## DEV Tutorial
+
+A tutorial explaining the major step of the project 
+is available at: 
+
+[Tutorial](https://docs.google.com/presentation/d/1EvzlbSAOj7oBWRnudqdZLHqyNAjuggbl0TpSV6O4VbU/edit?usp=sharing)
