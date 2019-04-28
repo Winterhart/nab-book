@@ -25,17 +25,4 @@ They can have:
 For now a contact can only have one **phone number** and/or
 one **address**
 
-## Architecture
-
-
-
-## Testing
-
-Made with `pytest`
-
-
-## Docker Command
-
-
-## Manual Installation
 
